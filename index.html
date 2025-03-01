@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Animation Ramadan</title>
+</head>
+<body>
+    <div class="animation-container">
+        <img src="./b2ac494d85f20e7cd7ca3e5623d255cc.png" class="crescent-moon" alt="هلال">
+    </div>
+    <div class="stars">
+        <span class="star"></span>
+        <span class="star"></span>
+        <span class="star"></span>
+    </div>
+    <div class="ramadan-text"> عبود يتمنى لكم رمضان مبارك كريم </div>
+    <svg id="noise-svg">
+        <filter id='noiseFilter'>
+            <feTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch' />
+        </filter>
+        <rect id="noise-rect" filter='url(#noiseFilter)' />
+    </svg>
+   
+    <div class="fanous off">
+        <div class="shadow"></div>
+   
+        <div class="base-container"><div class="base"><div></div></div></div>
+        <div class="small-outer-pipe">
+            <div class="small-inner-pipe"></div>
+        </div>
+        <div class="outer-pipe">
+            <div class="inner-pipe"></div>
+        </div>
+       
+        <div class="light-bulb">
+            <div class="bulb-glass"></div>
+            <div class="bulb-base"></div>
+            <div class="bulb-filament"></div>
+        </div>
+     
+        <div class="glass-tube"></div>
+        <div class="overlay"></div>
+   
+        <div class="tube-base-container">
+            <div class="wires"><div></div><div></div></div>
+            <div class="tube-base"></div>
+            <div class="rods">
+                <div class="left-rod"></div>
+                <div class="center-rod"></div>
+                <div class="right-rod"></div>
+            </div>
+            <div class="tube-btm"></div>
+        </div>
+   
+        <div class="power-cord">
+            <div></div>
+            <div></div>
+        </div>
+       
+        <div class="button" onclick="toggleLights()">
+            <div></div>
+        </div>
+    </div>
+    
+    <!-- Éléments ajoutés -->
+    <div class="flame"></div>
+    <div class="ambient-light"></div>
+    
+    <div class="calendar-container">
+        <div class="calendar-header">Calendrier Ramadan</div>
+        <div class="calendar-days">
+            <!-- Jours complétés -->
+            <div class="day past">1</div>
+            <div class="day past">2</div>
+            <div class="day past">3</div>
+            <div class="day past">4</div>
+            <div class="day past">5</div>
+            <div class="day past">6</div>
+            <div class="day past">7</div>
+            <div class="day past">8</div>
+            <div class="day past">9</div>
+            <div class="day past">10</div>
+            <!-- Jour actuel -->
+            <div class="day current">1</div>
+            <!-- Jours à venir -->
+            <div class="day">12</div>
+            <div class="day">13</div>
+            <div class="day">14</div>
+            <div class="day">15</div>
+            <div class="day">16</div>
+            <div class="day">17</div>
+            <div class="day">18</div>
+            <div class="day">19</div>
+            <div class="day">20</div>
+            <div class="day">21</div>
+            <div class="day">22</div>
+            <div class="day">23</div>
+            <div class="day">24</div>
+            <div class="day">25</div>
+            <div class="day">26</div>
+            <div class="day">27</div>
+            <div class="day">28</div>
+            <div class="day">29</div>
+            <div class="day">30</div>
+        </div>
+    </div>
+    <audio id="ramadanSound" src="song.mp3" preload="auto"></audio>
+    <script src="main.js"></script>
+</body>
+</html>

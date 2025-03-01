@@ -1,0 +1,580 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0a1a2f;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Motifs islamiques en arrière-plan */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 10% 20%, transparent 20%, rgba(255, 215, 0, 0.03) 21%, transparent 22%),
+        radial-gradient(circle at 90% 80%, transparent 20%, rgba(255, 215, 0, 0.03) 21%, transparent 22%),
+        radial-gradient(circle at 50% 50%, transparent 40%, rgba(255, 215, 0, 0.02) 41%, transparent 42%);
+    background-size: 300px 300px, 300px 300px, 600px 600px;
+    z-index: -2;
+}
+
+.animation-container {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.crescent-moon {
+    width: 150px;
+    height: auto;
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: all 1s ease-in-out;
+}
+
+.ramadan-text {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    color: gold;
+    font-size: 4rem;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    z-index: 10;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    width: 2px;
+    height: 2px;
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: all 0.8s ease-in-out;
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Fanous (lanterne) styles */
+.fanous {
+    position: relative;
+    width: 150px;
+    height: 300px;
+    margin: 50px auto;
+    transform-origin: top center;
+    animation: sway 5s ease-in-out infinite;
+    z-index: 5;
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(-2deg); }
+    50% { transform: rotate(2deg); }
+}
+
+.shadow {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    filter: blur(5px);
+}
+
+.base-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 30px;
+    z-index: 2;
+}
+
+.base {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#614321, #8b5a2b);
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.base div {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 10px;
+    background: #9b7a4b;
+    border-radius: 5px;
+}
+
+.small-outer-pipe {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 15px;
+    background: linear-gradient(#614321, #8b5a2b);
+    z-index: 1;
+}
+
+.small-inner-pipe {
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 9px;
+    background: #9b7a4b;
+}
+
+.outer-pipe {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 20px;
+    background: linear-gradient(#614321, #8b5a2b);
+    z-index: 1;
+}
+
+.inner-pipe {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 10px;
+    background: #9b7a4b;
+}
+
+.glass-tube {
+    position: absolute;
+    bottom: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 150px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 65px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 150px;
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 5px,
+        rgba(255, 215, 0, 0.05) 5px,
+        rgba(255, 215, 0, 0.05) 10px
+    );
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.tube-base-container {
+    position: absolute;
+    bottom: 215px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 40px;
+    z-index: 3;
+}
+
+.tube-base {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 20px;
+    background: linear-gradient(#614321, #8b5a2b);
+    border-radius: 5px 5px 0 0;
+}
+
+.wires {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 10px;
+}
+
+.wires div:nth-child(1) {
+    position: absolute;
+    left: 10px;
+    width: 2px;
+    height: 10px;
+    background: #222;
+}
+
+.wires div:nth-child(2) {
+    position: absolute;
+    right: 10px;
+    width: 2px;
+    height: 10px;
+    background: #222;
+}
+
+.rods {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 15px;
+}
+
+.left-rod {
+    position: absolute;
+    left: 5px;
+    width: 2px;
+    height: 15px;
+    background: #c0c0c0;
+}
+
+.center-rod {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 15px;
+    background: #c0c0c0;
+}
+
+.right-rod {
+    position: absolute;
+    right: 5px;
+    width: 2px;
+    height: 15px;
+    background: #c0c0c0;
+}
+
+.tube-btm {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 5px;
+    background: #614321;
+    border-radius: 5px 5px 0 0;
+}
+
+.light-bulb {
+    position: absolute;
+    bottom: 235px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 40px;
+    z-index: 1;
+}
+
+.bulb-glass {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50% 50% 5px 5px;
+}
+
+.bulb-base {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 10px;
+    background: #333;
+    border-radius: 2px;
+}
+
+.bulb-filament {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.power-cord {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 70px;
+    background: #222;
+    z-index: 0;
+}
+
+.power-cord div:nth-child(1) {
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    width: 25px;
+    height: 5px;
+    background: #333;
+    border-radius: 2px;
+}
+
+.power-cord div:nth-child(2) {
+    position: absolute;
+    bottom: -5px;
+    left: -5px;
+    width: 15px;
+    height: 5px;
+    background: #222;
+    border-radius: 2px;
+}
+
+.button {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 15px;
+    background: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    z-index: 10;
+}
+
+.button:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.button div {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 5px;
+    background: #222;
+    border-radius: 2px;
+}
+
+/* États allumé/éteint */
+.fanous.off .bulb-filament {
+    background: #333;
+}
+
+.fanous.on .bulb-filament {
+    background: #ffff00;
+    box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.8);
+}
+
+.fanous.on .glass-tube {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.05));
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.fanous.on .overlay {
+    background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 5px,
+        rgba(255, 215, 0, 0.1) 5px,
+        rgba(255, 215, 0, 0.1) 10px
+    );
+}
+
+#noise-svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.05;
+}
+
+#noise-rect {
+    width: 100%;
+    height: 100%;
+}
+
+/* Effet de flamme animée dans la lanterne */
+.flame {
+    position: absolute;
+    bottom: 245px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 15px;
+    background: linear-gradient(to top, #ff8c00, #ffcc00);
+    border-radius: 50% 50% 20% 20%;
+    transform-origin: center bottom;
+    opacity: 0;
+    z-index: 3;
+    filter: blur(1px);
+    animation: none;
+}
+
+.fanous.on .flame {
+    opacity: 1;
+    animation: flicker 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+    0% { 
+        height: 15px;
+        transform: translateX(-50%) scaleX(0.9) scaleY(1.1); 
+    }
+    25% { 
+        height: 16px;
+        transform: translateX(-51%) scaleX(1.1) scaleY(0.9); 
+    }
+    50% { 
+        height: 14px;
+        transform: translateX(-49%) scaleX(0.9) scaleY(1); 
+    }
+    75% { 
+        height: 15px;
+        transform: translateX(-50%) scaleX(1) scaleY(1.1); 
+    }
+    100% { 
+        height: 16px;
+        transform: translateX(-50%) scaleX(1.1) scaleY(0.9); 
+    }
+}
+
+/* Étoiles filantes */
+.shooting-star {
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, white, transparent);
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 1;
+    filter: blur(1px);
+    transition: transform 1s linear, opacity 0.2s ease-in 0.8s;
+}
+
+/* Calendrier Ramadan */
+.calendar-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+    background: rgba(10, 26, 47, 0.8);
+    border: 1px solid gold;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    color: white;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-in-out;
+    z-index: 10;
+}
+
+.fanous.on ~ .calendar-container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.calendar-header {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: gold;
+    font-size: 16px;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+}
+
+.day {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.day.current {
+    background-color: gold;
+    color: #0a1a2f;
+}
+
+.day.past {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* Effet de lumière ambiante quand la lanterne est allumée */
+.ambient-light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 215, 0, 0.05) 0%,
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.fanous.on ~ .ambient-light {
+    opacity: 1;
+}
